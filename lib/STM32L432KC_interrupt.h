@@ -9,10 +9,16 @@
 #include <system_stm32l4xx.h> //include this header too for ARM structs
 
 
+
+
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
 void initInterrupt(int pin_num);
+void EXTI9_5_IRQHandler(void);
+void EXTI15_10_IRQHandler();
+float update_velocity(void);
+float update_direction(void);
 
 #endif
