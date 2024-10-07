@@ -80,8 +80,8 @@ void EXTI15_10_IRQHandler(void){
 
 float update_velocity(void){
   float avg_period = ((last_A_falling_edge) + (last_B_falling_edge-last_B_rising_edge)) / 2.0;
-  float vel = avg_period * SystemCoreClock * 120; // convert pulse count to seconds, 1 rev is 120 pulses
-  return vel;
+  float vel = avg_period * 1/8E3 * 120; // convert pulse count to seconds, 1 rev is 120 pulses, 1 rev = ?? m
+  return avg_period;
 }
 
 float update_direction(void){

@@ -5,6 +5,8 @@
 #define STM32L4_GPIO_H
 
 #include <stdint.h> // Include stdint header
+#include <stm32l432xx.h> //include device header to get all the nice structs for the stm32l432kc
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // Definitions
@@ -15,7 +17,7 @@
 #define GPIO_HIGH   1
 
 // Base addresses for GPIO ports
-#define GPIOB_BASE  (0x48000400UL)
+//#define GPIOB_BASE  (0x48000400UL)
 
 // Arbitrary GPIO functions for pinMode()
 #define GPIO_INPUT  0
@@ -28,23 +30,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 // GPIO register structs here
-typedef struct {
-    volatile uint32_t MODER;   // GPIO Offset 0x00 GPIO port mode register
-    volatile uint32_t OTYPER;  // GPIO Offset 0x04
-    volatile uint32_t OSPEEDR; // GPIO Offset 0x08
-    volatile uint32_t PURPDR;  // GPIO Offset 0x0C
-    volatile uint32_t IDR;     // GPIO Offset 0x10
-    volatile uint32_t ODR;     // GPIO Offset 0x14
-    volatile uint32_t BSRR;    // GPIO Offset 0x18
-    volatile uint32_t LCKR;    // GPIO Offset 0x1C
-    volatile uint32_t AFRL;    // GPIO Offset 0x20
-    volatile uint32_t AFRH;    // GPIO Offset 0x24
-} GPIO;
+
 
 // Pointers to GPIO-sized chunks of memory for each peripheral
-#define GPIOB ((GPIO *) GPIOB_BASE)
+//#define GPIOB ((GPIO *) GPIOB_BASE)
 
-#define GPIO GPIOB
+#define GPIO GPIOA
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
