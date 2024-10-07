@@ -68,19 +68,20 @@ int main(void) {
     //calculate velocity
     volatile float velocity = 0.0;
     volatile float direction = -1.0;
-    
+    int loop_delay = 500;
 
     while(1){
       // update velocity
-      velocity = update_velocity();
+      velocity = update_velocity(loop_delay);
       direction = update_direction();
 
       //print velocity
-      printf("%f rev/s\n", velocity);
-      //printf("hi");
+      printf("%f rev/s\n", velocity*direction);
+     // printf("b period %f \n", velocity);
+      //printf("num of edges since reset %f \n", velocity);
 
       //delay 0.1 s (updates at 1 Hz)
-      delay_millis1516(TIM16, 500);
+      delay_millis1516(TIM16, loop_delay);
       
     }
 

@@ -18,7 +18,7 @@
 void initInterrupt(int pin_num);
 void EXTI9_5_IRQHandler(void);
 void EXTI15_10_IRQHandler();
-float update_velocity(void);
+float update_velocity(int loop_delay);
 float update_direction(void);
 
 #endif
